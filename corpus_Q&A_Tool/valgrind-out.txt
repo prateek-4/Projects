@@ -1,0 +1,1081 @@
+==212== Memcheck, a memory error detector
+==212== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==212== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==212== Command: ./test_tool.exe
+==212== Parent PID: 160
+==212== 
+--212-- 
+--212-- Valgrind options:
+--212--    --leak-check=full
+--212--    --show-leak-kinds=all
+--212--    --track-origins=yes
+--212--    --verbose
+--212--    --log-file=valgrind-out.txt
+--212-- Contents of /proc/version:
+--212--   Linux version 4.4.0-22621-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #1635-Microsoft Fri Jan 01 08:00:00 PST 2016
+--212-- 
+--212-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--212-- Page sizes: currently 4096, max supported 4096
+--212-- Valgrind library directory: /usr/lib/valgrind
+--212-- Reading syms from /mnt/c/Users/arnav/OneDrive/Documents/College_books/SEM_3/COL_106/Assignments/AS7/prototype_11/test_tool.exe
+--212-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--212--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--212--   .. CRC mismatch (computed 2977d8b2 wanted c64f09ed)
+--212--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--212--   .. CRC is valid
+--212-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--212--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--212--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--212--    object doesn't have a symbol table
+--212--    object doesn't have a dynamic symbol table
+--212-- Scheduler: using generic scheduler lock implementation.
+--212-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==212== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-212-by-deadsmash-on-???
+==212== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-212-by-deadsmash-on-???
+==212== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-212-by-deadsmash-on-???
+==212== 
+==212== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==212== don't want to do, unless you know exactly what you're doing,
+==212== or are doing some strange experiment):
+==212==   /usr/lib/valgrind/../../bin/vgdb --pid=212 ...command...
+==212== 
+==212== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==212==   /path/to/gdb ./test_tool.exe
+==212== and then give GDB the following command
+==212==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=212
+==212== --pid is optional if only one valgrind process is running
+==212== 
+==212== error calling PR_SET_PTRACER, vgdb might block
+--212-- REDIR: 0x4020d20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--212-- REDIR: 0x4020b00 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--212-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--212--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--212--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--212--    object doesn't have a symbol table
+--212-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--212--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--212--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--212--    object doesn't have a symbol table
+==212== WARNING: new redirection conflicts with existing -- ignoring it
+--212--     old: 0x04020d20 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--212--     new: 0x04020d20 (strlen              ) R-> (2007.0) 0x04c34db0 strlen
+--212-- REDIR: 0x401d540 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c35ee0 (strcmp)
+--212-- REDIR: 0x4021260 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c394f0 (mempcpy)
+--212-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--212--    object doesn't have a symbol table
+--212-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--212--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--212--   .. CRC mismatch (computed 4e7cf542 wanted 8d27f134)
+--212--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--212--   .. CRC is valid
+--212-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--212--    object doesn't have a symbol table
+--212-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--212--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--212--   .. CRC mismatch (computed f250d419 wanted 4aacab51)
+--212--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--212--   .. CRC is valid
+--212-- REDIR: 0x581ba50 (libc.so.6:memmove) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581ad60 (libc.so.6:strncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bd30 (libc.so.6:strcasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581a7b0 (libc.so.6:strcat) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581ad90 (libc.so.6:rindex) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581d480 (libc.so.6:rawmemchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bbc0 (libc.so.6:mempcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581b9f0 (libc.so.6:bcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581ad20 (libc.so.6:strncmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581a820 (libc.so.6:strcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bb20 (libc.so.6:memset) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x5838db0 (libc.so.6:wcschr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581acc0 (libc.so.6:strnlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581a890 (libc.so.6:strcspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bd80 (libc.so.6:strncasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581a860 (libc.so.6:strcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bec0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581adc0 (libc.so.6:strpbrk) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581a7e0 (libc.so.6:index) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581ac90 (libc.so.6:strlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x5825380 (libc.so.6:memrchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bdd0 (libc.so.6:strcasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581b9c0 (libc.so.6:memchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x5839b70 (libc.so.6:wcslen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581b070 (libc.so.6:strspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bd00 (libc.so.6:stpncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581bcd0 (libc.so.6:stpcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581d4b0 (libc.so.6:strchrnul) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x581be20 (libc.so.6:strncasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--212-- REDIR: 0x590b280 (libc.so.6:__strrchr_avx2) redirected to 0x4c34730 (rindex)
+--212-- REDIR: 0x5814020 (libc.so.6:malloc) redirected to 0x4c31aa0 (malloc)
+--212-- REDIR: 0x590b450 (libc.so.6:__strlen_avx2) redirected to 0x4c34cf0 (strlen)
+--212-- REDIR: 0x5907a60 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c37e00 (bcmp)
+--212-- REDIR: 0x5826b30 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c35da0 (strcmp)
+--212-- REDIR: 0x4ed1280 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c32110 (operator new(unsigned long))
+--212-- REDIR: 0x590b990 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c386e0 (memmove)
+--212-- REDIR: 0x5814910 (libc.so.6:free) redirected to 0x4c32cd0 (free)
+--212-- REDIR: 0x4ecf390 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c331d0 (operator delete(void*))
+--212-- REDIR: 0x590b970 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c39130 (mempcpy)
+==212== Invalid read of size 8
+==212==    at 0x116E72: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:941)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116E7A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:941)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83940 is 2,992 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x117AD2: __gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >::__normal_iterator(stopwordsnode* const&) (stl_iterator.h:783)
+==212==    by 0x11729B: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::end() (stl_vector.h:582)
+==212==    by 0x116EBF: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B1E: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1504)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B1E: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1504)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B4A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B4A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B59: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B59: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B86: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1508)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B86: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1508)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Invalid read of size 8
+==212==    at 0x117AD2: __gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >::__normal_iterator(stopwordsnode* const&) (stl_iterator.h:783)
+==212==    by 0x117BF9: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::begin() (stl_vector.h:564)
+==212==    by 0x117303: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:405)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== Argument 'size' of function __builtin_new has a fishy (possibly negative) value: -32
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x117331: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:406)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+**212** new/new[] failed and should throw an exception, but Valgrind
+**212**    cannot throw exceptions and so is aborting instead.  Sorry.
+==212==    at 0x4C3181C: ??? (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x4C321F5: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x117331: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:406)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== HEAP SUMMARY:
+==212==     in use at exit: 11,616 bytes in 5 blocks
+==212==   total heap usage: 11 allocs, 6 frees, 97,301 bytes allocated
+==212== 
+==212== Searching for pointers to 5 not-freed blocks
+==212== Checked 118,424 bytes
+==212== 
+==212== 24 bytes in 1 blocks are still reachable in loss record 1 of 5
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x113AD3: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 40 bytes in 1 blocks are still reachable in loss record 2 of 5
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x10BD3A: Trie::Trie() (dict.cpp:101)
+==212==    by 0x10CC4B: Dict::Dict() (dict.cpp:279)
+==212==    by 0x118F01: SearchEngine::SearchEngine() (search.cpp:67)
+==212==    by 0x112399: QNA_tool::QNA_tool() (qna_tool.cpp:132)
+==212==    by 0x10B328: main (main.cpp:10)
+==212== 
+==212== 768 bytes in 1 blocks are still reachable in loss record 3 of 5
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x1110EB: __gnu_cxx::new_allocator<TrieNode*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x110A4E: std::allocator_traits<std::allocator<TrieNode*> >::allocate(std::allocator<TrieNode*>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x1101B7: std::_Vector_base<TrieNode*, std::allocator<TrieNode*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x10F42E: std::_Vector_base<TrieNode*, std::allocator<TrieNode*> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x10E702: std::_Vector_base<TrieNode*, std::allocator<TrieNode*> >::_Vector_base(unsigned long, std::allocator<TrieNode*> const&) (stl_vector.h:138)
+==212==    by 0x10D873: std::vector<TrieNode*, std::allocator<TrieNode*> >::vector(unsigned long, TrieNode* const&, std::allocator<TrieNode*> const&) (stl_vector.h:297)
+==212==    by 0x10BCDD: TrieNode::TrieNode(char) (dict.cpp:97)
+==212==    by 0x10BD4A: Trie::Trie() (dict.cpp:101)
+==212==    by 0x10CC4B: Dict::Dict() (dict.cpp:279)
+==212==    by 0x118F01: SearchEngine::SearchEngine() (search.cpp:67)
+==212==    by 0x112399: QNA_tool::QNA_tool() (qna_tool.cpp:132)
+==212== 
+==212== 2,400 bytes in 1 blocks are still reachable in loss record 4 of 5
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x110724: __gnu_cxx::new_allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > >::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x10FE66: std::allocator_traits<std::allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > > >::allocate(std::allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > >&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x10EF4B: std::_Vector_base<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > >, std::allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > > >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x10DE90: std::vector<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > >, std::allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > > >::_M_default_append(unsigned long) (vector.tcc:571)
+==212==    by 0x10D3A2: std::vector<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > >, std::allocator<std::vector<std::vector<ParagOccur, std::allocator<ParagOccur> >, std::allocator<std::vector<ParagOccur, std::allocator<ParagOccur> > > > > >::resize(unsigned long) (stl_vector.h:692)
+==212==    by 0x10D025: WordCountVector::WordCountVector(int) (dict.h:111)
+==212==    by 0x10BD66: Trie::Trie() (dict.cpp:101)
+==212==    by 0x10CC4B: Dict::Dict() (dict.cpp:279)
+==212==    by 0x118F01: SearchEngine::SearchEngine() (search.cpp:67)
+==212==    by 0x112399: QNA_tool::QNA_tool() (qna_tool.cpp:132)
+==212==    by 0x10B328: main (main.cpp:10)
+==212== 
+==212== 8,384 bytes in 1 blocks are still reachable in loss record 5 of 5
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x117331: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:406)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== LEAK SUMMARY:
+==212==    definitely lost: 0 bytes in 0 blocks
+==212==    indirectly lost: 0 bytes in 0 blocks
+==212==      possibly lost: 0 bytes in 0 blocks
+==212==    still reachable: 11,616 bytes in 5 blocks
+==212==         suppressed: 0 bytes in 0 blocks
+==212== 
+==212== ERROR SUMMARY: 13 errors from 13 contexts (suppressed: 0 from 0)
+==212== 
+==212== 1 errors in context 1 of 13:
+==212== Argument 'size' of function __builtin_new has a fishy (possibly negative) value: -32
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x117331: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:406)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 2 of 13:
+==212== Invalid read of size 8
+==212==    at 0x117AD2: __gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >::__normal_iterator(stopwordsnode* const&) (stl_iterator.h:783)
+==212==    by 0x117BF9: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::begin() (stl_vector.h:564)
+==212==    by 0x117303: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:405)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 3 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B86: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1508)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 4 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B86: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1508)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 5 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B59: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 6 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B59: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 7 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B4A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 8 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B4A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1507)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 9 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EF1: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B1E: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1504)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83930 is 2,976 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 10 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116EE6: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::size() const (stl_vector.h:671)
+==212==    by 0x117B1E: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_check_len(unsigned long, char const*) const (stl_vector.h:1504)
+==212==    by 0x1172F3: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:403)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 11 of 13:
+==212== Invalid read of size 8
+==212==    at 0x117AD2: __gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >::__normal_iterator(stopwordsnode* const&) (stl_iterator.h:783)
+==212==    by 0x11729B: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::end() (stl_vector.h:582)
+==212==    by 0x116EBF: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 12 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116E7A: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:941)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83940 is 2,992 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== 
+==212== 1 errors in context 13 of 13:
+==212== Invalid read of size 8
+==212==    at 0x116E72: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:941)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Address 0x5b83938 is 2,984 bytes inside a block of size 4,192 free'd
+==212==    at 0x4C3323B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x118399: __gnu_cxx::new_allocator<stopwordsnode>::deallocate(stopwordsnode*, unsigned long) (new_allocator.h:125)
+==212==    by 0x1180B0: std::allocator_traits<std::allocator<stopwordsnode> >::deallocate(std::allocator<stopwordsnode>&, stopwordsnode*, unsigned long) (alloc_traits.h:462)
+==212==    by 0x1179D5: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_deallocate(stopwordsnode*, unsigned long) (stl_vector.h:180)
+==212==    by 0x117453: void std::vector<stopwordsnode, std::allocator<stopwordsnode> >::_M_realloc_insert<stopwordsnode const&>(__gnu_cxx::__normal_iterator<stopwordsnode*, std::vector<stopwordsnode, std::allocator<stopwordsnode> > >, stopwordsnode const&) (vector.tcc:448)
+==212==    by 0x116ED5: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::push_back(stopwordsnode const&) (stl_vector.h:948)
+==212==    by 0x113D2D: stopwordshashtable::insertintotable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:54)
+==212==    by 0x115E4A: stopwordshashtable::insertstopwords() (qna_tool.cpp:72)
+==212==    by 0x111FE3: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:91)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212==  Block was alloc'd at
+==212==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==212==    by 0x11849F: __gnu_cxx::new_allocator<stopwordsnode>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==212==    by 0x11816D: std::allocator_traits<std::allocator<stopwordsnode> >::allocate(std::allocator<stopwordsnode>&, unsigned long) (alloc_traits.h:436)
+==212==    by 0x117C81: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==212==    by 0x11796C: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==212==    by 0x117132: std::_Vector_base<stopwordsnode, std::allocator<stopwordsnode> >::_Vector_base(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:138)
+==212==    by 0x116DE3: std::vector<stopwordsnode, std::allocator<stopwordsnode> >::vector(unsigned long, std::allocator<stopwordsnode> const&) (stl_vector.h:284)
+==212==    by 0x113AE6: stopwordshashtable::stopwordshashtable() (qna_tool.cpp:29)
+==212==    by 0x111FD7: QNA_tool::modify_query(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (qna_tool.cpp:90)
+==212==    by 0x112595: QNA_tool::get_top_k_para(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) (qna_tool.cpp:152)
+==212==    by 0x10B459: main (main.cpp:25)
+==212== 
+==212== ERROR SUMMARY: 13 errors from 13 contexts (suppressed: 0 from 0)
