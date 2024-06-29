@@ -1,0 +1,20 @@
+[objective]
+maximize
+
+[A]
+1, 0, 0
+0, 1, 0
+0, 0, 1
+
+[b]
+5
+5
+5
+
+[constraint_types]
+<=
+<=
+<=
+
+[c]
+1, 1, 1
